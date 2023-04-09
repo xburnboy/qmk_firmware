@@ -243,7 +243,7 @@ void hurt_paddle(void) {
 #endif //GAME_ENABLE
 
 // Capslock, Scroll lock and Numlock indicator on Left side lights.
-void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (get_rgb_nightmode()) rgb_matrix_set_color_all(RGB_OFF);
 
     led_t led_state = host_keyboard_led_state();
@@ -259,7 +259,7 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 /*
     // System NumLock warning indicator RGB setup
     #ifdef INVERT_NUMLOCK_INDICATOR
-    if (!led_state.num_lock) {  // on if NUM lock is OFF to bring attention to overlay numpad not functional when enabled
+    if (!led_state.num_lock) { // on if NUM lock is OFF to bring attention to overlay numpad not functional when enabled
         rgb_matrix_set_color(LED_GRV, RGB_ORANGE2);
         rgb_matrix_set_color(LED_L1, RGB_ORANGE2);
         rgb_matrix_set_color(LED_L2, RGB_ORANGE2);
@@ -267,7 +267,7 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         rgb_matrix_set_color(LED_FN, RGB_ORANGE2);
     }
     #else
-    if (led_state.num_lock) {  // Normal, on if NUM lock is ON
+    if (led_state.num_lock) { // Normal, on if NUM lock is ON
         rgb_matrix_set_color(LED_GRV, RGB_ORANGE2);
         rgb_matrix_set_color(LED_L1, RGB_ORANGE2);
         rgb_matrix_set_color(LED_L2, RGB_ORANGE2);
@@ -370,11 +370,11 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 
         // System NumLock warning indicator RGB setup
         #ifdef INVERT_NUMLOCK_INDICATOR 
-        if (!led_state.num_lock) {  // on if NUM lock is OFF to bring attention to overlay numpad not functional when enabled
+        if (!led_state.num_lock) { // on if NUM lock is OFF to bring attention to overlay numpad not functional when enabled
             rgb_matrix_set_color(LED_N, RGB_ORANGE2);
         }
         #else
-        if (led_state.num_lock) {  // Normal, on if NUM lock is ON
+        if (led_state.num_lock) { // Normal, on if NUM lock is ON
             rgb_matrix_set_color(LED_N, RGB_ORANGE2);
         }
         #endif // INVERT_NUMLOCK_INDICATOR
@@ -447,11 +447,11 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         // Numpad & Mouse Keys overlay RGB
     case _NUMPADMOUSE:
         #ifdef INVERT_NUMLOCK_INDICATOR 
-        if (!led_state.num_lock) {  // on if NUM lock is OFF to bring attention to overlay numpad not functional when enabled
+        if (!led_state.num_lock) { // on if NUM lock is OFF to bring attention to overlay numpad not functional when enabled
             rgb_matrix_set_color(LED_N, RGB_ORANGE2);
         }
         #else
-        if (led_state.num_lock) {  // Normal, on if NUM lock is ON
+        if (led_state.num_lock) { // Normal, on if NUM lock is ON
             rgb_matrix_set_color(LED_N, RGB_ORANGE2);
         }
         #endif // INVERT_NUMLOCK_INDICATOR
