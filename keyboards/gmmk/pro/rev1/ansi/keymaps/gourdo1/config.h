@@ -26,6 +26,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Force n-key rollover
 #define FORCE_NKRO
 
+// Set keyboard debounce time (originally 5ms, now 8ms to combat touchy switches)
+#define DEBOUNCE 8
+
 // Set TT to two taps
 #define TAPPING_TOGGLE 2
 
