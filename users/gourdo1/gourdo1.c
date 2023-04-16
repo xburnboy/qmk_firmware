@@ -222,7 +222,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
             eeconfig_update_user(user_config.raw); // Writes the new status to EEPROM
         }
         break;
-    case TG_INS:  // Toggle Encoder function
+    case TG_INS:  // Togle Insert function accessed with SHIFT-BKSPC OR SHIFT-DEL
         if (record->event.pressed) {
             user_config.ins_on_shft_bkspc_or_del ^= 1; // Toggles the status
             eeconfig_update_user(user_config.raw); // Writes the new status to EEPROM
@@ -240,7 +240,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
             eeconfig_update_user(user_config.raw); // Writes the new status to EEPROM
         }
         break;
-    case TG_ENGCAP:  // Toggle highlighting Non-English letters during CAPSLOCK
+    case TG_ENGCAP:  // Toggle highlighting non-English letters during CAPSLOCK
         if (record->event.pressed) {
             user_config.rgb_english_caps ^= 1; // Toggles the status
             eeconfig_update_user(user_config.raw); // Writes the new status to EEPROM
@@ -493,7 +493,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
     }
     break;
 
-    #ifdef IDLE_TIMEOUT_ENABLE
+        #ifdef IDLE_TIMEOUT_ENABLE
     case RGB_TOI:
         if (record -> event.pressed) {
             timeout_update_threshold(true);
